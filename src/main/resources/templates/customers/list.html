@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vendégek</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Vendégek</h1>
+
+<p><a th:href="@{/customers/new}">Új vendég</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Név</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Cím</th>
+        <th>Megjegyzés</th>
+        <th>Műveletek</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.name}">Vendég neve</td>
+        <td th:text="${customer.phone}">+36123456789</td>
+        <td th:text="${customer.email}">mail@example.com</td>
+        <td th:text="${customer.address}">Cím</td>
+        <td th:text="${customer.note}">Megjegyzés</td>
+        <td>
+            <a th:href="@{/customers/{id}/edit(id=${customer.id})}">Szerkesztés</a>
+            <form th:action="@{/customers/{id}/delete(id=${customer.id})}" method="post">
+                <button type="submit">Törlés</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${customers.empty}">
+    <p>Még nincs vendég rögzítve.</p>
+</div>
+</body>
+</html>

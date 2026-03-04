@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vendég űrlap</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1 th:text="${customer.id == null ? 'Új vendég' : 'Vendég szerkesztése'}">Vendég</h1>
+
+<form th:action="${formAction}" th:object="${customer}" method="post">
+    <div>
+        <label for="name">Név:</label>
+        <input type="text" th:field="*{name}" required>
+    </div>
+    <div>
+        <label for="phone">Telefon:</label>
+        <input type="text" th:field="*{phone}">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" th:field="*{email}">
+    </div>
+    <div>
+        <label for="address">Cím:</label>
+        <input type="text" th:field="*{address}">
+    </div>
+    <div>
+        <label for="note">Megjegyzés:</label>
+        <textarea th:field="*{note}"></textarea>
+    </div>
+
+    <button type="submit">Mentés</button>
+    <a th:href="@{/customers}">Mégse</a>
+</form>
+</body>
+</html>

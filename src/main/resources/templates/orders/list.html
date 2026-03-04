@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rendelések</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Rendelések</h1>
+
+<p><a th:href="@{/orders/new}">Új rendelés</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Azonosító</th>
+        <th>Vendég</th>
+        <th>Dátum</th>
+        <th>Idő</th>
+        <th>Végösszeg</th>
+        <th>Műveletek</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}">1</td>
+        <td th:text="${order.customer != null ? order.customer.name : '-'}">Vendég</td>
+        <td th:text="${order.date}">2026-03-04</td>
+        <td th:text="${order.time}">12:00</td>
+        <td th:text="${order.price}">0</td>
+        <td>
+            <a th:href="@{/orders/{id}(id=${order.id})}">Részletek</a>
+            <form th:action="@{/orders/{id}/delete(id=${order.id})}" method="post">
+                <button type="submit">Törlés</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${orders.empty}">
+    <p>Még nincs rendelés rögzítve.</p>
+</div>
+</body>
+</html>

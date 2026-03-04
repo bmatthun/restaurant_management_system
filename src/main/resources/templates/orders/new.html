@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Új rendelés</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Új rendelés</h1>
+
+<form th:action="@{/orders/new}" method="post">
+    <div>
+        <label for="customerId">Vendég:</label>
+        <select id="customerId" name="customerId" required>
+            <option value="">Válassz vendéget</option>
+            <option th:each="customer : ${customers}"
+                    th:value="${customer.id}"
+                    th:text="${customer.name}">Vendég</option>
+        </select>
+    </div>
+    <div>
+        <label for="date">Dátum:</label>
+        <input id="date" type="date" name="date" th:value="${defaultDate}" required>
+    </div>
+    <div>
+        <label for="time">Időpont:</label>
+        <input id="time" type="time" name="time" th:value="${defaultTime}" required>
+    </div>
+
+    <h2>Tételek</h2>
+    <div th:each="slot : ${#numbers.sequence(0, 2)}">
+        <label>Étel:</label>
+        <select name="bowlIds">
+            <option value="">Válassz tálat</option>
+            <option th:each="bowl : ${bowls}"
+                    th:value="${bowl.id}"
+                    th:text="${bowl.name + ' (' + bowl.price + ' Ft)'}">Tál</option>
+        </select>
+
+        <label>Darab:</label>
+        <input type="number" name="quantities" min="0" value="0">
+    </div>
+
+    <button type="submit">Mentés</button>
+    <a th:href="@{/orders}">Mégse</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rendelés részletei</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Rendelés részletei</h1>
+
+<p><strong>Vendég:</strong> <span th:text="${order.customer != null ? order.customer.name : '-'}">Vendég</span></p>
+<p><strong>Dátum:</strong> <span th:text="${order.date}">2026-03-04</span></p>
+<p><strong>Idő:</strong> <span th:text="${order.time}">12:00</span></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Tál</th>
+        <th>Darab</th>
+        <th>Egységár</th>
+        <th>Összesen</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${order.orderItems}">
+        <td th:text="${item.bowl != null ? item.bowl.name : '-'}">Tál</td>
+        <td th:text="${item.quantity}">1</td>
+        <td th:text="${item.unitPrice}">0</td>
+        <td th:text="${item.lineTotal}">0</td>
+    </tr>
+    </tbody>
+</table>
+
+<p><strong>Végösszeg:</strong> <span th:text="${order.price}">0</span> Ft</p>
+<p><a th:href="@{/orders}">Vissza a listához</a></p>
+</body>
+</html>
