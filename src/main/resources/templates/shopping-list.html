@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Heti bevásárlólista</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Heti bevásárlólista</h1>
+
+<p>
+    Időszak:
+    <span th:text="${weekStart}">2026-03-02</span>
+    -
+    <span th:text="${weekEnd}">2026-03-08</span>
+</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Összetevő</th>
+        <th>Mennyiség</th>
+        <th>Mértékegység</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${shoppingList}">
+        <td th:text="${entry.key}">Rizs</td>
+        <td th:text="${entry.value}">0</td>
+        <td th:text="${ingredientUnits[entry.key]}">g</td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${shoppingList.empty}">
+    <p>Nincs rendelés a megadott hétre.</p>
+</div>
+</body>
+</html>
