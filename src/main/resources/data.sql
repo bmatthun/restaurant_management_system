@@ -32,6 +32,11 @@ CREATE TABLE IF NOT EXISTS Bowl (
     Ár INTEGER
 );
 
+CREATE TABLE IF NOT EXISTS bowl_ingredients (
+    bowl_id BIGINT NOT NULL,
+    ingredient_id BIGINT NOT NULL
+);
+
 INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
 SELECT 'Csirkemell', 5, 'KG'
 WHERE NOT EXISTS (
@@ -180,4 +185,48 @@ INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
 SELECT 'Marha steak bowl', 1, 'db', 3590
 WHERE NOT EXISTS (
     SELECT 1 FROM Bowl WHERE Tál_típusa = 'Marha steak bowl'
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csipos csirke bowl'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Csirkemell')
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csipos csirke bowl')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Csirkemell')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csipos csirke bowl'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Jazmin rizs')
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csipos csirke bowl')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Jazmin rizs')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Teriyaki lazac bowl'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Teriyaki szosz')
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Teriyaki lazac bowl')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Teriyaki szosz')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Zoldseg mix bowl'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Uborka')
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Zoldseg mix bowl')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Uborka')
 );

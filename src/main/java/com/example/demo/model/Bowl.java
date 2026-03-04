@@ -21,7 +21,7 @@ public class Bowl {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "bowl_ingredient",
+    @JoinTable(name = "bowl_ingredients",
     joinColumns = @JoinColumn(name = "bowl_id"),
     inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
     private List<Ingredient> ingredients;

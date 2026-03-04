@@ -4,6 +4,8 @@ import com.example.demo.model.enums.UnitTypes;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "Ingredient")
@@ -21,4 +23,7 @@ public class Ingredient {
     @Column(name = "Mértékegység")
     @Enumerated(EnumType.STRING)
     private UnitTypes unit;
+
+    @ManyToMany(mappedBy = "ingredients")
+    private List<Bowl> bowls;
 }
