@@ -3,243 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Management System — Projekt Memo</title>
+<title>Session Memo - 2026-03-04</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; padding: 24px; }
-  h1 { font-size: 1.4rem; font-weight: 700; color: #f8fafc; margin-bottom: 4px; }
-  .subtitle { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card { background: #1e2130; border: 1px solid #2d3148; border-radius: 12px; padding: 20px; }
-  .card.full { grid-column: 1 / -1; }
-  .card-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .green { color: #4ade80; }
-  .yellow { color: #fbbf24; }
-  .blue { color: #60a5fa; }
-  .red { color: #f87171; }
-  .purple { color: #c084fc; }
-  .gray { color: #94a3b8; }
+  :root {
+    --bg: #f4efe6;
+    --paper: #fffaf2;
+    --ink: #1f1a17;
+    --muted: #6e6258;
+    --line: #d8cbbc;
+    --accent: #a44a1c;
+    --accent-soft: #f1d8c8;
+    --ok: #1f7a4f;
+    --warn: #9a6a00;
+  }
 
-  /* Status badges */
-  .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
-  .badge-green { background: #052e16; color: #4ade80; border: 1px solid #166534; }
-  .badge-yellow { background: #1c1200; color: #fbbf24; border: 1px solid #854d0e; }
-  .badge-red { background: #1c0505; color: #f87171; border: 1px solid #7f1d1d; }
+  * { box-sizing: border-box; }
 
-  /* Entity table */
-  table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-  th { text-align: left; color: #64748b; font-weight: 600; padding: 6px 8px; border-bottom: 1px solid #2d3148; }
-  td { padding: 8px; border-bottom: 1px solid #1a1f2e; }
-  tr:last-child td { border-bottom: none; }
+  body {
+    margin: 0;
+    padding: 32px 18px;
+    background:
+      radial-gradient(circle at top right, #f8e8d8 0, transparent 30%),
+      linear-gradient(180deg, #efe5d8 0%, var(--bg) 100%);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+  }
 
-  /* Progress bar */
-  .progress-wrap { background: #0f1117; border-radius: 8px; height: 10px; margin-top: 6px; overflow: hidden; }
-  .progress-bar { height: 100%; border-radius: 8px; background: linear-gradient(90deg, #4ade80, #22d3ee); }
+  .memo {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(31, 26, 23, 0.08);
+  }
 
-  /* Code block */
-  code { background: #0f1117; border: 1px solid #2d3148; border-radius: 6px; padding: 2px 8px; font-family: 'Courier New', monospace; font-size: 0.78rem; color: #a5f3fc; }
-  .code-block { background: #0f1117; border: 1px solid #2d3148; border-radius: 8px; padding: 14px; font-family: 'Courier New', monospace; font-size: 0.78rem; color: #a5f3fc; line-height: 1.7; }
+  .eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
-  /* Todo items */
-  .todo { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1f2e; }
-  .todo:last-child { border-bottom: none; }
-  .todo-num { background: #1e2130; border: 1px solid #2d3148; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-  .todo-text { font-size: 0.82rem; line-height: 1.5; }
-  .todo-sub { font-size: 0.74rem; color: #64748b; margin-top: 2px; }
+  h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.1;
+  }
 
-  /* Decision */
-  .decision { background: #0f1117; border-left: 3px solid #c084fc; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 6px 0; font-size: 0.82rem; }
+  .sub {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
 
-  /* Stat */
-  .stat { text-align: center; padding: 10px; }
-  .stat-num { font-size: 1.8rem; font-weight: 800; line-height: 1; }
-  .stat-label { font-size: 0.7rem; color: #64748b; margin-top: 4px; }
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .hero {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent-soft), #f9efe5);
+    border: 1px solid #e6c8b3;
+  }
 
-  /* Agent */
-  .agent-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1a1f2e; font-size: 0.82rem; }
-  .agent-row:last-child { border-bottom: none; }
+  .hero strong {
+    color: var(--accent);
+  }
 
-  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(2, 1fr); } }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    background: #fffdf9;
+  }
+
+  .full {
+    margin-top: 18px;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    color: var(--accent);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+
+  .status-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.96rem;
+  }
+
+  .status-table th,
+  .status-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+
+  .status-table th {
+    color: var(--muted);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .status-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ok {
+    color: var(--ok);
+    font-weight: 700;
+  }
+
+  .pending {
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .metric:last-child {
+    border-bottom: none;
+  }
+
+  .metric-label {
+    color: var(--muted);
+  }
+
+  .metric-value {
+    font-weight: 700;
+  }
+
+  .next-list li::marker {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  code {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #f1e5d8;
+    border: 1px solid #e0cdb8;
+    font-size: 0.92em;
+  }
+
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .memo {
+      padding: 20px;
+    }
+  }
 </style>
 </head>
 <body>
+<main class="memo">
+  <p class="eyebrow">Session Memo</p>
+  <h1>Session Memo - 2026-03-04</h1>
+  <p class="sub">Branch: <code>apa</code></p>
 
-<h1>🍽️ Restaurant Management System</h1>
-<p class="subtitle">Projekt memo — 2026-03-04 | Branch: <code>apa</code> | Repo: github.com/bmatthun/restaurant_management_system</p>
+  <section class="hero">
+    <strong>Rövid összegzés:</strong>
+    A jelenlegi session végére az alap admin felületek működnek, az Ingredient CRUD elkészült,
+    a tesztcsomag zöld, és a legutóbbi változások fel vannak tolva az <code>apa</code> branchre.
+  </section>
 
-<div class="grid">
+  <div class="grid">
+    <section class="card">
+      <h2>Elvégzett munka</h2>
+      <ul>
+        <li>App elindítva, működő oldalak: <code>/bowls</code>, <code>/customers</code>, <code>/orders</code></li>
+        <li>Ingredient CRUD teljes implementáció (controller, service, 2 template)</li>
+        <li>52 teszt zöld - BUILD SUCCESS</li>
+        <li><code>git push origin apa</code> ✓</li>
+      </ul>
+    </section>
 
-  <!-- Statisztikák -->
-  <div class="card full">
-    <div class="card-title green">📊 Jelenlegi állapot</div>
-    <div class="stats-row">
-      <div class="stat">
-        <div class="stat-num green">12</div>
-        <div class="stat-label">JUnit teszt</div>
+    <section class="card">
+      <h2>Metrikák</h2>
+      <div class="metric">
+        <span class="metric-label">JaCoCo</span>
+        <span class="metric-value">88%</span>
       </div>
-      <div class="stat">
-        <div class="stat-num yellow">62%</div>
-        <div class="stat-label">JaCoCo fedettség</div>
+      <div class="metric">
+        <span class="metric-label">Cél</span>
+        <span class="metric-value">95%</span>
       </div>
-      <div class="stat">
-        <div class="stat-num blue">1</div>
-        <div class="stat-label">Entitás kész (Bowl)</div>
+      <div class="metric">
+        <span class="metric-label">Teszt állapot</span>
+        <span class="metric-value ok">52/52 zöld</span>
       </div>
-      <div class="stat">
-        <div class="stat-num purple">✓</div>
-        <div class="stat-label">PR merged → main</div>
+      <div class="metric">
+        <span class="metric-label">Git állapot</span>
+        <span class="metric-value ok">push kész</span>
       </div>
-    </div>
-    <div class="progress-wrap" style="margin-top:16px">
-      <div class="progress-bar" style="width:62%"></div>
-    </div>
-    <div style="font-size:0.72rem;color:#64748b;margin-top:6px">JaCoCo coverage — cél: 85%</div>
+    </section>
   </div>
 
-  <!-- Entitások -->
-  <div class="card">
-    <div class="card-title blue">🗄️ Entitások állapota</div>
-    <table>
-      <tr><th>Entitás</th><th>Controller</th><th>Service</th><th>Repo</th></tr>
+  <section class="card full">
+    <h2>Állapot</h2>
+    <table class="status-table">
+      <thead>
+      <tr>
+        <th>Entitás</th>
+        <th>UI</th>
+        <th>Service</th>
+        <th>Repo</th>
+      </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>Bowl</td>
-        <td><span class="badge badge-green">✓ kész</span></td>
-        <td><span class="badge badge-yellow">üres</span></td>
-        <td><span class="badge badge-green">✓ kész</span></td>
-      </tr>
-      <tr>
-        <td>Order</td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-      </tr>
-      <tr>
-        <td>Customer</td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
       </tr>
       <tr>
         <td>Ingredient</td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
-        <td><span class="badge badge-red">hiányzik</span></td>
+        <td class="ok">✓ (új)</td>
+        <td class="ok">✓ (új)</td>
+        <td class="ok">✓</td>
       </tr>
+      <tr>
+        <td>Customer</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+      </tr>
+      <tr>
+        <td>Order</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+      </tr>
+      <tr>
+        <td>OrderItem</td>
+        <td class="pending">-</td>
+        <td class="ok">✓</td>
+        <td class="ok">✓</td>
+      </tr>
+      </tbody>
     </table>
-  </div>
+  </section>
 
-  <!-- Tech stack -->
-  <div class="card">
-    <div class="card-title purple">⚙️ Tech stack</div>
-    <div class="agent-row"><span>Framework</span><code>Spring Boot + Maven</code></div>
-    <div class="agent-row"><span>Frontend</span><code>Thymeleaf</code></div>
-    <div class="agent-row"><span>Adatbázis</span><code>H2 (file: ./data/summary)</code></div>
-    <div class="agent-row"><span>Tesztek</span><code>JUnit 5 + JaCoCo</code></div>
-    <div class="agent-row"><span>Branch</span><code>apa → main</code></div>
-    <div class="agent-row"><span>Agent</span><code>GPT-5.3-Codex (CLI)</code></div>
-  </div>
-
-  <!-- Következő teendők -->
-  <div class="card full">
-    <div class="card-title yellow">📋 Következő teendők (prioritás sorrendben)</div>
-
-    <div class="todo">
-      <div class="todo-num yellow">1</div>
-      <div>
-        <div class="todo-text"><strong>AGENTS.md + quality_gate.sh bemásolása a projektbe</strong></div>
-        <div class="todo-sub"><code>cp ~/Downloads/AGENTS.md /home/tibor/restaurant_management_system/</code><br>
-        <code>cp ~/Downloads/quality_gate.sh /home/tibor/restaurant_management_system/</code><br>
-        <code>chmod +x quality_gate.sh && git add . && git commit -m "chore: add quality gate"</code></div>
-      </div>
-    </div>
-
-    <div class="todo">
-      <div class="todo-num yellow">2</div>
-      <div>
-        <div class="todo-text"><strong>Mock adatok betöltése — data.sql</strong></div>
-        <div class="todo-sub">Bowl, Ingredient, Order, Customer tesztadatok H2-be. Codex agent fogja írni.</div>
-      </div>
-    </div>
-
-    <div class="todo">
-      <div class="todo-num yellow">3</div>
-      <div>
-        <div class="todo-text"><strong>Ingredient entitás Bowl-hoz kötése</strong></div>
-        <div class="todo-sub">Sok-sok kapcsolat (ManyToMany). Ez az alap a bevásárlólista kalkulátorhoz.</div>
-      </div>
-    </div>
-
-    <div class="todo">
-      <div class="todo-num yellow">4</div>
-      <div>
-        <div class="todo-text"><strong>Heti bevásárlólista kalkulátor</strong></div>
-        <div class="todo-sub">Rendelések → Tálak × mennyiség → Összetevők összesítve → Lista</div>
-      </div>
-    </div>
-
-    <div class="todo">
-      <div class="todo-num gray">5</div>
-      <div>
-        <div class="todo-text gray"><strong>Order + Customer entitás implementálása</strong></div>
-        <div class="todo-sub">Döntés szükséges: melyik jön előbb?</div>
-      </div>
-    </div>
-
-    <div class="todo">
-      <div class="todo-num gray">6</div>
-      <div>
-        <div class="todo-text gray"><strong>JaCoCo coverage növelése 62% → 85%</strong></div>
-        <div class="todo-sub">Quality gate minimum. Service réteg tesztek hiányoznak.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Nyitott döntések -->
-  <div class="card">
-    <div class="card-title red">❓ Nyitott döntések</div>
-    <div class="decision">Melyik entitás jön következőnek?<br><span style="color:#64748b;font-size:0.75rem">Order / Customer / Ingredient</span></div>
-    <div class="decision">Spring Security autentikáció kell?<br><span style="color:#64748b;font-size:0.75rem">Kis bisztró vs. jövőbeli növekedés</span></div>
-    <div class="decision">H2 marad vagy éles DB?<br><span style="color:#64748b;font-size:0.75rem">MySQL / PostgreSQL productionihoz</span></div>
-    <div class="decision">Thymeleaf only vagy REST API is?<br><span style="color:#64748b;font-size:0.75rem">REST kell a mobilhoz / külső rendszerhez</span></div>
-  </div>
-
-  <!-- Agent setup -->
-  <div class="card">
-    <div class="card-title green">🤖 Agent setup</div>
-    <div class="agent-row"><span>Coding agent</span><span class="badge badge-green">GPT-5.3-Codex</span></div>
-    <div class="agent-row"><span>Telepítés</span><code>npm install -g @openai/codex</code></div>
-    <div class="agent-row"><span>Indítás</span><code>cd /home/tibor/... && codex</code></div>
-    <div class="agent-row"><span>Ellenőrzés</span><code>./mvnw clean test</code></div>
-    <div class="agent-row"><span>Quality</span><code>./quality_gate.sh</code></div>
-    <div style="margin-top:12px;font-size:0.75rem;color:#64748b">ChatGPT Plus ($20/hó) szükséges a Codex CLI-hez</div>
-  </div>
-
-  <!-- Projekt info -->
-  <div class="card full">
-    <div class="card-title gray">📁 Projekt elérési út + git</div>
-    <div class="code-block">
-# Projekt mappa<br>
-cd /home/tibor/restaurant_management_system<br><br>
-# Branch<br>
-git checkout apa<br>
-git pull origin apa<br><br>
-# Teszt futtatás<br>
-./mvnw clean test<br><br>
-# Quality gate (ha már telepítve van)<br>
-./quality_gate.sh<br><br>
-# Commit + push<br>
-git add .<br>
-git commit -m "feat: ..."<br>
-git push origin apa
-    </div>
-  </div>
-
-</div>
-
-<div style="text-align:center;margin-top:24px;font-size:0.72rem;color:#374151">
-  Generálva: 2026-03-04 | Restaurant Management System — Bisztró projekt
-</div>
-
+  <section class="card full">
+    <h2>Következő lépések</h2>
+    <ul class="next-list">
+      <li><code>/</code> főoldal / navigáció (404 megszüntetése)</li>
+      <li>JaCoCo 95% elérése</li>
+      <li>Spring Security - csak ha kell</li>
+      <li>H2 → éles DB (Flyway) - later</li>
+    </ul>
+  </section>
+</main>
 </body>
 </html>
