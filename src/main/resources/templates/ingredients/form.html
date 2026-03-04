@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hozzávaló űrlap</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1 th:text="${ingredient.id == null ? 'Új hozzávaló' : 'Hozzávaló szerkesztése'}">Hozzávaló</h1>
+
+<form th:action="${formAction}" th:object="${ingredient}" method="post">
+    <div>
+        <label for="name">Név:</label>
+        <input type="text" th:field="*{name}" required>
+    </div>
+    <div>
+        <label for="quantity">Mennyiség:</label>
+        <input type="number" th:field="*{quantity}" required min="0">
+    </div>
+    <div>
+        <label for="unit">Mértékegység:</label>
+        <select th:field="*{unit}" required>
+            <option value="">Válassz...</option>
+            <option th:each="unitType : ${unitTypes}"
+                    th:value="${unitType}"
+                    th:text="${unitType}">
+                DB
+            </option>
+        </select>
+    </div>
+
+    <button type="submit">Mentés</button>
+    <a th:href="@{/ingredients}">Mégse</a>
+</form>
+</body>
+</html>

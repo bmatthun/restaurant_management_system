@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hozzávalók</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Hozzávalók</h1>
+
+<p><a th:href="@{/ingredients/new}">Új hozzávaló</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Név</th>
+        <th>Mennyiség</th>
+        <th>Mértékegység</th>
+        <th>Műveletek</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ingredient : ${ingredients}">
+        <td th:text="${ingredient.name}">Hozzávaló neve</td>
+        <td th:text="${ingredient.quantity}">0</td>
+        <td th:text="${ingredient.unit}">DB</td>
+        <td>
+            <a th:href="@{/ingredients/{id}/edit(id=${ingredient.id})}">Szerkesztés</a>
+            <form th:action="@{/ingredients/{id}/delete(id=${ingredient.id})}" method="post">
+                <button type="submit">Törlés</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${ingredients.empty}">
+    <p>Még nincs hozzávaló rögzítve.</p>
+</div>
+</body>
+</html>
