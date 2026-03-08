@@ -30,6 +30,14 @@ class ThymeLeafControllerTest {
     private BowlRepository bowlRepository;
 
     @Test
+    @DisplayName("GET / - átirányítás a bowl listára")
+    void testRootRedirectsToBowls() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/bowls"));
+    }
+
+    @Test
     @DisplayName("GET /bowls - lista megjelenítése")
     void testListBowls() throws Exception {
         Bowl bowl1 = new Bowl();
@@ -63,6 +71,22 @@ class ThymeLeafControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("bowls/form"))
                 .andExpect(model().attributeExists("bowl"));
+    }
+
+    @Test
+    @DisplayName("GET /bowls/edit/1 - szerkesztő űrlap megjelenítése")
+    void testShowEditForm() throws Exception {
+        Bowl bowl = new Bowl();
+        bowl.setId(1L);
+        bowl.setName("Klasszikus Buddha tál");
+
+        when(bowlRepository.findById(1L)).thenReturn(java.util.Optional.of(bowl));
+
+        mockMvc.perform(get("/bowls/edit/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("bowls/form"))
+                .andExpect(model().attributeExists("bowl"))
+                .andExpect(model().attribute("bowl", bowl));
     }
 
     @Test

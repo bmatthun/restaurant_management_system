@@ -13,6 +13,16 @@ public class ThymeLeafController {
     @Autowired
     private BowlRepository bowlRepository;
 
+    /**
+     * Redirects the root path to the bowl list.
+     *
+     * @return redirect to bowl list
+     */
+    @GetMapping("/")
+    public String redirectToBowls() {
+        return "redirect:/bowls";
+    }
+
     @GetMapping("/bowls")
     public String listBowl(Model model) {
         model.addAttribute("bowls", bowlRepository.findAll());

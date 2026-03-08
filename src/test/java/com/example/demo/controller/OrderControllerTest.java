@@ -97,4 +97,14 @@ class OrderControllerTest {
                 .andExpect(view().name("orders/detail"))
                 .andExpect(model().attributeExists("order"));
     }
+
+    @Test
+    @DisplayName("POST /orders/{id}/delete - rendelés törlése")
+    void testDeleteOrder() throws Exception {
+        mockMvc.perform(post("/orders/1/delete"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/orders"));
+
+        verify(orderService).deleteOrder(1L);
+    }
 }
