@@ -230,3 +230,983 @@ WHERE NOT EXISTS (
     WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Zoldseg mix bowl')
       AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'Uborka')
 );
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'csirkemell', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'csirkemell'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'lazacfilé', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'lazacfilé'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'marhahús (darált)', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'marhahús (darált)'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'ribeye steak', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'ribeye steak'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'pancetta', 1, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'pancetta'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'tojás', 30, 'DB'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'tojás'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'tejszín', 2, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'tejszín'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'vaj', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'vaj'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'olívaolaj', 3, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'olívaolaj'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'fokhagyma', 1, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'fokhagyma'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'vöröshagyma', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'paradicsom', 4, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'paradicsom'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'spenót', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'spenót'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'rucola', 1, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'rucola'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'római saláta', 10, 'DB'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'római saláta'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'caprese mozzarella', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'caprese mozzarella'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'feta sajt', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'feta sajt'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'cheddar sajt', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'cheddar sajt'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'gruyère sajt', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'gruyère sajt'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'parmezán', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'parmezán'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'ricotta', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'ricotta'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'burgonya', 5, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'burgonya'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'brokkoli', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'brokkoli'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'cukkini', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'cukkini'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'padlizsán', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'padlizsán'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'paprika', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'paprika'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'répa', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'répa'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'póréhagyma', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'póréhagyma'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'bazsalikom', 50, 'DKG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'bazsalikom'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'rozmaring', 50, 'DKG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'rozmaring'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'kakukkfű', 50, 'DKG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'kakukkfű'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'petrezselyem', 50, 'DKG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'petrezselyem'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'citrom', 15, 'DB'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'citrom'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'mustár', 5, 'DL'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'mustár'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'majonéz', 10, 'DL'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'majonéz'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'szójaszósz', 5, 'DL'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'szójaszósz'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'pesto', 8, 'DL'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'pesto'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'paradicsomszósz', 2, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'paradicsomszósz'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'tagliatelle', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'tagliatelle'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'ravioli tészta', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'ravioli tészta'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'gnocchi', 2, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'gnocchi'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'zsemle (burger)', 20, 'DB'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'zsemle (burger)'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'liszt', 3, 'KG'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'liszt'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'tejföl', 2, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'tejföl'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'vörösbor', 2, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'vörösbor'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'alaplé (csirke)', 3, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'alaplé (csirke)'
+);
+
+INSERT INTO Ingredient (Összetevő_neve, Mennyiség, Mértékegység)
+SELECT 'alaplé (zöldség)', 3, 'L'
+WHERE NOT EXISTS (
+    SELECT 1 FROM Ingredient WHERE Összetevő_neve = 'alaplé (zöldség)'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Cézár saláta grillezett csirkével', 1, 'db', 2800
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Caprese saláta', 1, 'db', 2200
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Caprese saláta'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Francia hagymaleves gruyère-rel', 1, 'db', 1800
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Paradicsomleves bazsalikommal', 1, 'db', 1600
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Bisztró burger cheddarral', 1, 'db', 3800
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Grillezett lazac citromos vajjal', 1, 'db', 4500
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Csirkemell pesto-val és gnocchival', 1, 'db', 3600
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Ribeye steak sült hagymával', 1, 'db', 5900
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Fetás spenótos quiche', 1, 'db', 2900
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Ratatouille pirított kenyérrel', 1, 'db', 2400
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Carbonara', 1, 'db', 2800
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Carbonara'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Bolognese tagliatelle', 1, 'db', 2600
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Spenótos ricottás ravioli', 1, 'db', 2900
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Sült krumpli rozmaringos sóval', 1, 'db', 1200
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Sült krumpli rozmaringos sóval'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Párolt zöldségek', 1, 'db', 1100
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Crème brûlée', 1, 'db', 1600
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Crème brûlée'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Csokoládé fondant', 1, 'db', 1800
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant'
+);
+
+INSERT INTO Bowl (Tál_típusa, Mennyiség, Mértékegység, Ár)
+SELECT 'Citromos pannacotta', 1, 'db', 1500
+WHERE NOT EXISTS (
+    SELECT 1 FROM Bowl WHERE Tál_típusa = 'Citromos pannacotta'
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'csirkemell')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'csirkemell')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'római saláta')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'római saláta')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'parmezán')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Cézár saláta grillezett csirkével')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'parmezán')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'caprese mozzarella')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'caprese mozzarella')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'bazsalikom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Caprese saláta')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'bazsalikom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'gruyère sajt')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'gruyère sajt')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vörösbor')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vörösbor')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'alaplé (csirke)')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Francia hagymaleves gruyère-rel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'alaplé (csirke)')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'bazsalikom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'bazsalikom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'alaplé (zöldség)')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Paradicsomleves bazsalikommal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'alaplé (zöldség)')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'marhahús (darált)')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'marhahús (darált)')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cheddar sajt')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cheddar sajt')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'zsemle (burger)')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'zsemle (burger)')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'majonéz')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'majonéz')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'mustár')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bisztró burger cheddarral')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'mustár')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'lazacfilé')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'lazacfilé')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'citrom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'citrom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vaj')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vaj')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'petrezselyem')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Grillezett lazac citromos vajjal')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'petrezselyem')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'csirkemell')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'csirkemell')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'pesto')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'pesto')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'gnocchi')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csirkemell pesto-val és gnocchival')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'gnocchi')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ribeye steak')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ribeye steak')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'rozmaring')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ribeye steak sült hagymával')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'rozmaring')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'spenót')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'spenót')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'feta sajt')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'feta sajt')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejföl')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Fetás spenótos quiche')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejföl')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsom')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cukkini')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cukkini')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'padlizsán')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'padlizsán')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paprika')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Ratatouille pirított kenyérrel')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paprika')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'pancetta')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'pancetta')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'parmezán')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Carbonara')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'parmezán')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'marhahús (darált)')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'marhahús (darált)')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsomszósz')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'paradicsomszósz')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tagliatelle')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tagliatelle')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Bolognese tagliatelle')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vöröshagyma')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'spenót')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'spenót')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ricotta')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ricotta')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ravioli tészta')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Spenótos ricottás ravioli')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'ravioli tészta')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Sült krumpli rozmaringos sóval'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'burgonya')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Sült krumpli rozmaringos sóval')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'burgonya')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Sült krumpli rozmaringos sóval'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'rozmaring')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Sült krumpli rozmaringos sóval')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'rozmaring')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'brokkoli')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'brokkoli')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'répa')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'répa')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cukkini')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Párolt zöldségek')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'cukkini')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Crème brûlée'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Crème brûlée')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Crème brûlée'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Crème brûlée')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vaj')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'vaj')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tojás')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'liszt')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Csokoládé fondant')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'liszt')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Citromos pannacotta'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Citromos pannacotta')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'tejszín')
+);
+
+INSERT INTO bowl_ingredients (bowl_id, ingredient_id)
+SELECT
+    (SELECT id FROM Bowl WHERE Tál_típusa = 'Citromos pannacotta'),
+    (SELECT id FROM Ingredient WHERE Összetevő_neve = 'citrom')
+WHERE NOT EXISTS (
+    SELECT 1 FROM bowl_ingredients
+    WHERE bowl_id = (SELECT id FROM Bowl WHERE Tál_típusa = 'Citromos pannacotta')
+      AND ingredient_id = (SELECT id FROM Ingredient WHERE Összetevő_neve = 'citrom')
+);
